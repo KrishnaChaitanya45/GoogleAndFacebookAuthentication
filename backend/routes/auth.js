@@ -25,7 +25,7 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect: "http://localhost:3000/login-success",
+		successRedirect: "https://fliqa-auth.netlify.app/login-success",
 		failureRedirect: "/login/failed",
 	})
 );
@@ -39,7 +39,7 @@ router.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }
 router.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
-    successRedirect: "http://localhost:3000/login-success",
+    successRedirect: "https://fliqa-auth.netlify.app/login-success",
     failureRedirect: "/login/failed",
   })
 );
