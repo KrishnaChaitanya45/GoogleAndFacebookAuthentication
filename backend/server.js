@@ -20,7 +20,7 @@ app.use(passport.session());
 
 app.use(
 	cors({
-		origin: "https://fliqa-auth.vercel.app",
+		origin: "https://fliqa-auth.netlify.app",
 		methods: "GET,POST,PUT,DELETE",
 		credentials: true,
 	})
