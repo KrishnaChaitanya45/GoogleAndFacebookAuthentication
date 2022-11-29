@@ -13,20 +13,20 @@ app.use(
 		keys: [process.env.KEYS],
 		maxAge: 24 * 60 * 60 * 100,
 	})
-);
+);//for storing user's credentials in a cookie session 
 
-app.use(passport.initialize());
+app.use(passport.initialize());//to initialize passport library in order to use Google OAuth and Facebook OAuth
 app.use(passport.session());
 
 app.use(
 	cors({
-		origin: "https://fliqa-auth.netlify.app",
+		origin: "https://fliqa-auth.vercel.app",
 		methods: "GET,POST,PUT,DELETE",
 		credentials: true,
 	})
-);
+);//in order to avoid CORS error we have to allow access for the api for the specific sites 
 
-app.use("/auth", authRoute);
+app.use("/auth", authRoute);//send requests containing /auth to authRoute
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => console.log(`Listenting on port ${port}...`));

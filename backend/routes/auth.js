@@ -25,7 +25,7 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect: "https://fliqa-auth.netlify.app/login-success",
+		successRedirect: "https://fliqa-auth.vercel.app/login-success",
 		failureRedirect: "/login/failed",
 	})
 );
@@ -33,13 +33,13 @@ router.get(
 router.get("/logout", (req, res) => {
 	req.logout();
 	res.redirect(process.env.CLIENT_URL);
-});
-router.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }));
+});//to logout user we have a logout method provided by passport js
+router.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }));//to authenticate user via facebook by redirecting them to login panel of facebook
 
 router.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
-    successRedirect: "https://fliqa-auth.netlify.app/login-success",
+    successRedirect: "http://localhost:3000/login-success",
     failureRedirect: "/login/failed",
   })
 );
