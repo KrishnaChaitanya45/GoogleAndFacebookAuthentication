@@ -12,7 +12,7 @@ app.use(
 		name: "session",
 		keys: [process.env.KEYS],
 		maxAge: 24 * 60 * 60 * 100,
-		secure:true
+	
 	})
 );//for storing user's credentials in a cookie session 
 
@@ -21,7 +21,7 @@ app.use(passport.session());
 
 app.use(
 	cors({
-		origin: "https://fliqa-auth.netlify.app",
+		origin: "http://localhost:3000",
 		methods: "GET,POST,PUT,DELETE",
 		credentials: true,
 	})
